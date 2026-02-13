@@ -1,0 +1,262 @@
+:root {
+  --bg: #0f1012;
+  --ink: #f2f4f7;
+  --muted: #a9b0bb;
+  --accent: #3ecf8e;
+  --accent-strong: #2bb879;
+  --line: #2a2f38;
+  --warm: #1c2026;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 20%, #20242b 0, transparent 35%),
+    radial-gradient(circle at 88% 25%, #172722 0, transparent 30%),
+    var(--bg);
+}
+
+.page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 3rem 1.2rem 4rem;
+}
+
+.hero {
+  padding: 1rem 0 2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #363e49;
+  background: var(--warm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #d9e0ea;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  line-height: 1.06;
+  margin-top: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.76rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+  will-change: transform;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #07120c;
+  box-shadow: 0 10px 24px rgba(62, 207, 142, 0.16);
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 16px 34px rgba(62, 207, 142, 0.26);
+}
+
+.btn-secondary {
+  color: #d7dde8;
+  border-color: var(--line);
+  background: #161a20;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.btn-secondary:hover {
+  border-color: #3a4452;
+  background: #1b2129;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #0f1012,
+    0 0 0 4px rgba(62, 207, 142, 0.7);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.985);
+  transition-duration: 90ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: background-color 200ms ease, border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}
+
+main {
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #98a1ad;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3.5vw, 2.4rem);
+  margin-top: 0.65rem;
+  letter-spacing: -0.02em;
+}
+
+.section-copy {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 68ch;
+}
+
+.flow-section {
+  padding: 0.8rem 0 2.2rem;
+}
+
+.flow-section + .flow-section {
+  border-top: 1px solid var(--line);
+  padding-top: 2.2rem;
+}
+
+.check-list {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.check-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.74rem;
+  border-radius: 999px;
+  border: 1px solid #35404e;
+  background: #161b23;
+  font-size: 0.93rem;
+  color: #dce3ed;
+}
+
+.flow-steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.flow-steps li {
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.flow-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #3ecf8e;
+}
+
+.flow-steps li::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 1.05rem;
+  width: 2px;
+  height: calc(100% + 0.9rem);
+  background: #3a4452;
+}
+
+.flow-steps li:last-child::after {
+  display: none;
+}
+
+h3 {
+  font-size: 1.08rem;
+}
+
+.flow-steps p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+.footer {
+  margin-top: 0.6rem;
+  color: #99a2af;
+  font-size: 0.94rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.2rem;
+}
+
+@media (max-width: 860px) {
+  .page {
+    padding: 1.3rem 0.9rem 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 9vw, 2.45rem);
+  }
+}
