@@ -193,6 +193,26 @@ h2 {
   color: #dce3ed;
 }
 
+.example-strip {
+  margin-top: 1rem;
+  padding: 0.9rem 0 0.1rem;
+  border-top: 1px solid var(--line);
+}
+
+.example-strip p {
+  line-height: 1.55;
+}
+
+.example-strip .dim {
+  color: #b8c0cc;
+  font-weight: 600;
+}
+
+.example-strip .warn {
+  margin-top: 0.55rem;
+  color: #ffd2d2;
+}
+
 .flow-steps {
   list-style: none;
   padding: 0;
