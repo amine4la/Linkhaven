@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "SurfShield",
+  "version": "0.0.1",
+  "description": "SurfShield content script scaffold.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["config.js", "reasons.js", "checks.js", "scoring.js", "domainCheck.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
